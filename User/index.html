@@ -1,105 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Online Shopping</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
-<link rel="stylesheet" href="css/home.css">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>Online Medical shop</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-<body>
-
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-card w3-left-align w3-large" style="background-color: #2196f3;">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Sign up</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Sign in</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">HOME</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="" data-toggle="modal" data-target="#signinmodal">SIGN IN</a></li>
+        <li><a href="" data-toggle="modal" data-target="#signupmodal">SIGN UP</a></li>
+      </ul>
+    </div>
   </div>
+</nav>
 
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Sign up</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Sign in</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Contact</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+    <!-- Sign IN Modal -->
+    <div class="modal fade" id="signinmodal" tabindex="-1" role="dialog" aria-labelledby="Signin" aria-hidden="true" style="margin-top:8%;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header modal-primary">
+                    <h4 class="modal-title text-center signinmodaltitle" id="exampleModalCenterTitle" style="color: white;">Sign In</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+
+                    <br>
+
+                    <form action="" method="POST">
+                        <div class="form-group si_usernamebox">
+                            <input type="text" class="form-control no-border" name="signin_username" placeholder="Email or Username">
+                        </div>
+                        <div class="form-group si_passwordbox">
+                            <input type="password" class="form-control no-border" name="signin_password" placeholder="Password">
+                        </div>
+                        <div class="text-center">
+                            <a href="" data-toggle="modal" data-target="#signupmodal" style="font-size: 12px; font-family: Montserrat, sans-serif;">Don't Have An Account! Sign Up Now</a>
+                        </div>
+
+                        <br>
+                        <div class="form-group text-center">
+                            <button type="submit" name="signin_btn" class="btn btn-primaryp">Sign In</button>
+                        </div>
+
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Sign UP Modal -->
+    <div class="modal fade" id="signupmodal" tabindex="-1" role="dialog" aria-labelledby="SignUP" aria-hidden="true" style="margin-top:3%;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header modal-primary">
+                    <h4 class="modal-title text-center signinmodaltitle" id="exampleModalCenterTitle" style="color: white;">Sign Up</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+
+                    <br>
+
+                    <form action="" method="POST">
+                        <div class="form-group si_usernamebox">
+                            <input type="text" class="form-control no-border" name="signup_first_name"placeholder="First Name">
+                        </div>
+                        <div class="form-group si_usernamebox">
+                            <input type="text" class="form-control no-border" name="signup_last_name"placeholder="Last Name">
+                        </div>
+                        <div class="form-group si_usernamebox">
+                            <input type="email" class="form-control no-border" name="signup_email" placeholder="Email">
+                        </div>
+                        <div class="form-group si_usernamebox">
+                            <input type="text" class="form-control no-border" name="signup_username" placeholder="Username">
+                        </div>
+                        <div class="form-group si_passwordbox">
+                            <input type="password" class="form-control no-border" name="signup_password" placeholder="New Password">
+                        </div>
+                        <div class="form-group si_passwordbox">
+                            <input type="password" class="form-control no-border" name="signup_retype_password" placeholder="Retype Password">
+                        </div>
+                        <div class="form-group si_usernamebox">
+                            <input type="text" class="form-control no-border" name="signup_contact" placeholder="Contact No">
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" name="signup_btn" class="btn btn-primaryp">Sign Up</button>
+                        </div>
+                    </form>
+          
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="jumbotron text-center">
+  <h1>Welcome</h1> 
+  <p>Online Medical Shop</p> 
+  <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <form>
+    <div class="input-group">
+      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-primary">Subscribe</button>
+      </div>
+    </div>
+  </form>
+            </div>
+        </div>
   </div>
 </div>
 
-<!-- Header -->
-<div class="hero-image">
-  <div class="hero-text">
-    <h1 style="font-size:50px">WELCOME</h1>
-    <p>Future is here..</p>
-    <button>Sing UP</button>
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-search logo-small"></span>
+      <h4>Search</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-tint logo-small"></span>
+      <h4>BLOOD</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-plus logo-small"></span>
+      <h4>Medical PLUS</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf logo-small"></span>
+      <h4>GREEN</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-shopping-cart logo-small"></span>
+      <h4>Add cart</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench logo-small"></span>
+      <h4 style="color:#303030;">HARD WORK</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
   </div>
 </div>
 
-<!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <h1>Features</h1>
-      <h2>Easy to found product .</h2>
-	  
 
-      <p class="w3-text-grey">Live to people, ......</p>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>ABOUT PHARMEASY</h2><br>
+      <h4>Bangladesh Leading and Most-trusted Online Healthcare Aggregator.</h4><br>
+      <p>Tired of rushing to the nearest chemist/ medical store to buy monthly medicines? You need not do so anymore! PharmEasy, your very own online healthcare and medicine delivery platform delivers genuine medicines right to your doorstep.</p>
+
+     <p>PharmEasy is pharmacy made easy. In a short span of three years, we have established ourselves as India’s leading online healthcare and medicine delivery platform, catering to two million customers pan Bangladesh. Through our mobile app and website, we help customers (patients and their caregivers) connect with local pharmacy stores and diagnostic centers to fulfill their extensive medical needs. We firmly believe that everyone should have access to good health and that health care should be affordable to all. Taking this belief forward, we offer genuine medicines at FLAT 20% OFF, up to 70% OFF on Diagnostic tests and up to 50% OFF on healthcare products, ensuring highest savings in the shortest time possible.</p>
+      <br><button class="btn btn-default btn-lg">Get in Touch</button>
     </div>
-
-    <div class="w3-third w3-center">
-      <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
-    </div>
-  </div>
-</div>
-
-<!-- Second Grid -->
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-third w3-center">
-      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
-    </div>
-
-    <div class="w3-twothird">
-      <h1>About</h1>
-      
-
-      <p class="w3-text-grey">Pharmacy is the science and technique of preparing, dispensing, and review of drugs and providing additional clinical services.
-	  It is a health profession that links health sciences with pharmaceutical sciences and aims to ensure the safe, effective, and affordable use of drugs..</p>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-signal logo"></span>
     </div>
   </div>
 </div>
 
 
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Dhaka, BD</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +8801622203..</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> medical@gmail.com</p>
+    </div>
+  </div>
+</div>
 
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
-  <div class="w3-xlarge w3-padding-32">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
- </div>
- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Medicine</a></p>
+
+<footer class="container-fluid text-center" style="background-color: black; color: white;">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p> Live for people </p>
 </footer>
 
 <script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
 </script>
 
 </body>
