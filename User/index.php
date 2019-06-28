@@ -149,7 +149,7 @@ if( isset($_POST['signin_btn']) ){
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#myPage">HOME</a>
+                <a class="navbar-brand" href="index.php">HOME</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
@@ -293,7 +293,7 @@ if( isset($_POST['signin_btn']) ){
                         else if( $Error_No >= 3 && $Error_No <= 6 )
                         {
                             echo '<div class="alert alert-danger text-center">
-                                      invalid username or password'.$Error_No.'
+                                      invalid username or password
                             </div>';
                         }
                         
