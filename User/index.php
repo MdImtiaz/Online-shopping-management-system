@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+    include('db_con.php');
+?>
+
 <head>
   <!-- Theme Made By www.w3schools.com -->
   <title>Online Medical shop</title>
