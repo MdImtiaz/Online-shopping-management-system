@@ -1,11 +1,21 @@
 <?php
     include('db_con.php');
 
+$Error_No = 0;
+session_start();
+session_destroy();
+session_start();
+
 /*** Error Defination *******
 
 Error : 1       [ Password & Confirm Password Does not Match ]
 Error : -1      [ Account Created Successfully ]
 Error : 2       [ One or More Fields Are Empty ]
+Error : 3       [ SignIN Password Fields Empty ]
+Error : 4       [ SignIN Username Fields Are Empty ]
+Error : 5       [ SignIN Both Fields Are Empty ]
+Error : -2      [ Login Success ]
+Error : -3      [ Ridirect Unsucessful ]
 
 
 
@@ -64,6 +74,56 @@ if( isset($_POST['signup_btn']) ){
     }
     
 }
+
+/*********** Sign IN Button *****************************/
+
+if( isset($_POST['signin_btn']) ){
+    
+
+   if(!empty($_POST['signin_username']) && !empty($_POST['signin_password']))
+    {
+            // All OK
+        $user_email=$_POST['signin_username'];
+		$user_password=$_POST['signin_password'];
+       
+        $user_query = mysqli_query(mysqli_connect('localhost','root','','oms'),"select * from user_handle");
+       
+        while( $row = mysqli_fetch_array($user_query) )
+        {
+            if($row['username']==$user_email && $row['pass']==$user_password)
+            {
+                $_SESSION['server_id'] = $row['server_id'];
+                $Error_No = -2;
+                break;
+            }
+           
+        }
+       
+       if( $Error_No == -2 )
+       {
+           header('Location: dash.php');
+       }
+       else
+           $Error_No = 6;
+    }
+    else if( !empty($_POST['signin_username']) && empty($_POST['signin_password']) )
+    {
+        // password empty
+        $Error_No = 3;
+    }
+    else if( empty($_POST['signin_username']) && !empty($_POST['signin_password']) )
+    {
+        //username empty
+        $Error_No = 4;
+    }
+    else
+    {
+        // both empty
+        $Error_No = 5;
+    }
+    
+}
+
 ?>
 
 <head>
@@ -226,8 +286,14 @@ if( isset($_POST['signup_btn']) ){
                         }
                         else if( $Error_No == -1 )
                         {
-                            echo '<div class="alert alert-sucess text-center">
+                            echo '<div class="alert alert-success text-center">
                                       Please <a href="" data-toggle="modal" data-target="#signinmodal"> Signin </a> to Continue
+                            </div>';
+                        }
+                        else if( $Error_No >= 3 && $Error_No <= 6 )
+                        {
+                            echo '<div class="alert alert-danger text-center">
+                                      invalid username or password'.$Error_No.'
                             </div>';
                         }
                         
